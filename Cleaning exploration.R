@@ -14,12 +14,12 @@ path_data_summary=paste0(working_directory,"/summary_data")
   
 setwd(working_directory)
   
-#lire les donnees avec les informations detaillees
+#lire les donnees contenant les informations detaillees
 listing=read.csv2( paste0(path_data_detailed,"/listings.csv")  ,sep=",",dec = ".",na.strings = "N/A")
 review=read.csv2(paste0(path_data_detailed,"/reviews.csv") ,sep=",",dec = ".",na.strings = "N/A")
 
 
-#lire les donnees avec les informations resumees
+#lire les donnees contenant les informations resumees
 listing2=read.csv2( paste0(path_data_summary,"/listings.csv")  ,sep=",",dec = ".",na.strings = "N/A")
 review2=read.csv2(paste0(path_data_summary,"/reviews.csv") ,sep=",",dec = ".",na.strings = "N/A")
 calendar=read.csv2( paste0(path_data_summary,"/calendar.csv")  ,sep=",",dec = ".",na.strings = "N/A")
