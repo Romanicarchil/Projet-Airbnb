@@ -5,6 +5,9 @@ Airbnb est une place de marché Internet pour la location de maisons et d'appart
 Pour ce projet, les donnees  provient du [Inside Airbnb](http://insideairbnb.com/get-the-data.html) qui est un site qui scrape données de Airbnb. Les donnees ont été scrapées sur la période allant du 11 avril 2021 au 13 avril 2021 sur les annonces de  la ville du Québec. Il contient des informations sur toutes les annonces Airbnb du Québec qui étaient en ligne sur le site sur cette période date soit un total de 2289 listings. la base de données contenant les données détaillées comporte plus de 70 variables. Nous avons des informations géospatiales sur les données dont la latitude et longitude; des informations sur le logement dont le type, le nombre de lits, le nombre de douche, le type de douche(privée ou partagée); des informations  sur les revues des clients, des informations sur l'annonceur et sur l'annonce etc.
 
 # Data cleaning and exploration
+Parmis la liste des variables contenues dans la base de donnees, j'ai decider d'en retirer certainres dont les  variables de texte libre comme  la description des annonces et les revues;  les informations relative sur l'annonceur. Pour inclure ces données, j'aurais dû faire un traitement du langage naturel(NLP). Ce qui aurait augmenté la complexité des modèles à produire par la suite.  Ces variables ont donc été abandonnées. De plus, plusieurs colonnes ne contenaient qu'une seule catégorie, ou un nombre élévé de valeurs manquantes. elles ont donc également été supprimées. 
+
+Une section complète  sur le nettage des données  explique comment et pourquoi certaines variables ont été retirer (voir fichier Cleaning exploration.R dans github)
 
 
 
