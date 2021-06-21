@@ -1,2 +1,2 @@
-# Projet_airbnb
-Projet technique individuel
+# Projet Technique: Prédiction du prix des listings sur Airbnb
+Airbnb est une place de marché Internet pour la location de maisons et d'appartements à court terme. Il vous permet, par exemple, de louer (lister) votre logement pendant une semaine pendant votre absence, ou de louer votre chambre vide. L'un des défis auxquels sont confrontés les hôtes Airbnb est de déterminer le prix de location optimal par nuit.  il n'existe pas de méthodes faciles d'accès pour déterminer le meilleur prix pour louer un espace.  Notre objectif sera de predire le prix des listings dans la région du Québec en nous basant sur l'historique des listing disponible.
