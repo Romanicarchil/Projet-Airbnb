@@ -9,6 +9,12 @@ Parmis la liste des variables contenues dans la base de donnees, j'ai decidé d'
 
 Une section complète  sur le nettage des données  explique comment et pourquoi certaines variables ont été retirées (voir fichier Cleaning exploration.R dans github).
 
+# Exploration des données via Power Bi 
+Le rapport Power Bi (voir fichier dashboard.pbix dans github) permet de realiser une exploration partielle de nos données.  Le rapport de visualisation contient deux pages. La premiere permet de visualiser les annonces selon leur position géographique et suivant le score des logements.  Les données de la page sont dynamique et peuvent être filtré via les variables qui sont: la zone géographique, le type d'appartement, le score du logement et le prix.
+
+
+
+
 
 
 
