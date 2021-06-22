@@ -9,7 +9,7 @@ Certaines  variables  ont été retirées du jeu de données à l'exemple des va
 
 Une section complète  sur le nettage des données  explique comment et pourquoi certaines variables ont été retirées (voir fichier [Cleaning exploration.R dans github](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/Cleaning%20exploration.R)).
 
-# Exploration des données via Power Bi 
+## Exploration des données via Power Bi 
 Le rapport PowerBi (voir fichier [dashboard.pbix](https://github.com/Romanicarchil/Projet-Airbnb) dans github) permet une exploration partielle des données.  Le rapport de visualisation contient deux pages. La premiere represente une visualisation des annonces selon la position géographique et suivant le score des logements.  Les données de la page sont dynamiques et peuvent être filtrées par les variables suivantes:  la zone géographique, le type d'appartement, le score  et le prix du logement. On peut constater par ce visuel qu'une grande partie des annonces Airbnb sont centrées sur certaines zones à l'exemple des points voisinant les plaines d'Abraham; ce qui  pourrait s'expliquer par l'énorme attrait de ces zones pour les touristes, en particulier pendant la periode estivale. 
 
 ![maps des donnees](https://raw.githubusercontent.com/Romanicarchil/Projet-Airbnb/main/projectImage/Screenshot%20from%202021-06-21%2014-57-07.png)
