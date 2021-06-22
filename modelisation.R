@@ -150,6 +150,8 @@ result=data.frame(matrix(NA,2,4))
 names(result)=c("lm","knn","rf","xgb")
 row.names(result)=c("RMSE","Rsquare")
 ntest=dim(data_test)[1]
+m <- which(names(data_train)=="price")
+
 
 # predict test with linear regression 
 
