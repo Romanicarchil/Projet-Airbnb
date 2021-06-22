@@ -48,12 +48,16 @@ Le modele KNN depend d'un parametre K à optimiser. La validation croisée appli
 
 
 # Prediction 
-Si on croise les valeurs des prix logements predits  obtenus par les modeles xgboost et random forêts  avec  les prix réels on obtient les figures suivantes. 
+Si on croise les valeurs des prix logements predits  obtenus par les modeles XGBoost et random forêts  avec  les prix réels on obtient les figures suivantes. 
 ![comparaison entre le prix predit et le prix actuel avec xgboost](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/cross%20with%20xgboost.png)
 
 ![comparaison entre le prix predit et le prix actuel avec random forest](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/cross%20actual%20predicted%20with%20random%20forest.png)
 
+# Conclusion
+Si nous devons choisir un modèle pour prédire le prix des logement,  ce serait le modele  XGBoost. Il est assez stable, moins couteux et prédit environ 54% de la variation de prix. Ce qui signifie que nous avons encore 46 % inexpliquée. Un ensemble de variables différentes qui ne sont pas incluses pourraient expliquer le reste de la variance.
+Par exemple, les commodites accessible près du logement peuvent influencer la decision des clients.  Il peut être important d'être à proximité de certaines zones touristiques. Mais aussi, savoir que vous aurez une épicerie ou un supermarché à une  distance de marche peut être un plus. De nombreux locataires apprécient le fait qu'on puisse préparer ces propres repas.
 
+On pourrait aussi realiser une analyse des sentiments sur les commentaires des clients. Puis faire la moyenne des scores obtenues par logement et les ajouter comme variables dans le jeu de données. De la même manière, on pourrait prendre en compte  la description des annonces dans les modèles. 
 
 
 
