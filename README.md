@@ -10,31 +10,36 @@ Certaines  variables  ont été retirées du jeu de données à l'exemple des va
 Une section complète  sur le nettage des données  explique comment et pourquoi certaines variables ont été retirées (voir fichier [Cleaning exploration.R dans github](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/Cleaning%20exploration.R)).
 
 # Exploration des données via Power Bi 
-Le rapport PowerBi (voir fichier [dashboard.pbix](https://github.com/Romanicarchil/Projet-Airbnb) dans github) permet de realiser une exploration partielle de nos données.  Le rapport de visualisation contient deux pages. La premiere permet de visualiser les annonces selon leur position géographique et suivant le score des logements.  Les données de la page sont dynamique et peuvent être filtrées via les variables qui sont: la zone géographique, le type d'appartement, le score  et le prix du logement. On peut rapidement constater qu'une grande partie des annonces Airbnb sont centrées sur certaines zones comme les points voisinant les plaines d'Abraham, ce qui  peut s'expliquer par l'énorme attrait de ces zones pour les touristes, en particulier pendant la periode estivale. 
+Le rapport PowerBi (voir fichier [dashboard.pbix](https://github.com/Romanicarchil/Projet-Airbnb) dans github) permet une exploration partielle des données.  Le rapport de visualisation contient deux pages. La premiere represente une visualisation des annonces selon la position géographique et suivant le score des logements.  Les données de la page sont dynamiques et peuvent être filtrées par les variables suivantes:  la zone géographique, le type d'appartement, le score  et le prix du logement. On peut constater par ce visuel qu'une grande partie des annonces Airbnb sont centrées sur certaines zones à l'exemple des points voisinant les plaines d'Abraham; ce qui  pourrait s'expliquer par l'énorme attrait de ces zones pour les touristes, en particulier pendant la periode estivale. 
 
 ![maps des donnees](https://raw.githubusercontent.com/Romanicarchil/Projet-Airbnb/main/projectImage/Screenshot%20from%202021-06-21%2014-57-07.png)
 
-La deuxième page d'une rapport PowerBI permet de réaliser une analyse bivariée entre les variables explicatives et le prix du logement. La page est dotée d'un filtre qui permet de sélectioner la variable en question. La figure suivante est illustration qui montre l'effect d'une logement avec chambre privée sur le prix.
+La deuxième page du rapport PowerBI permet une analyse bivariée entre chaque variable explicative et le prix du logement. La page est dotée d'un filtre qui permet de sélectioner la variable en question. La figure suivante est illustration qui montre l'effect du type du logement(logement privé) sur le prix.
 
 ![analyse bivariee entre le prix et variable chambre_privee](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/analyse%20bivariees.PNG)
 
-## Analyse des correlation
-L'analyse des correlations a releve que certaines variables etaient tres correllees. Ces variables ont ete retirer du jeux de donnees pour eviter de biaiser les resultats lors de la modelisation. la matrice des correlation a egalement revelle que les variables les plus correllees au prix des logement sont: Le nombre de chambre, le type de chambre et le fait que la chambre soit disponible sur un long terme(30 jours). Les figures ci-dessous decrit les correlations entre le prix des logements. En bleu, les correlations positives et en rouges, les correlations negatives.
+## Analyse des corrélations
+L'analyse des corrélations révèle que certaines variables du jeu de données  sont très correllées(corrélation supérieur à 90%). Ces variables ont été retirer du jeu de donnees pour éviter de biaiser les resultats lors de la modélisation. la matrice des correlations a également révélé que les variables les plus corréllées au prix des logements sont: Le nombre de chambres, le type de chambre et le fait que la chambre soit disponible sur un long terme(30 jours). Les figures ci-dessous représentent les correlations entre les varibles explicatives et le prix des logements. En bleu, les corrélations positives et en rouges, les corrélations negatives.
 ![correlation positive](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/Screenshot%20from%202021-06-21%2021-21-37.png)
 ![correlation negative](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/Screenshot%20from%202021-06-21%2021-22-32.png)
 
-## Les variables geospatiales
-Les logements ont ete regroupes en 10 classes suivant leur données géospatiales(latitude et longitude). Un modèle Kmeans( avec k=10) a été utilisé à cet effet.
-Les variables de latitude et longitude ont donc été supprimées du jeu de données et remplacées  par les classes obtenues du modèle Kmeans(voir ci-dessous). 
+## Les variables géospatiales
+Les logements ont été regroupés en 10 classes suivant leurs données géospatiales(latitude et longitude). Un modèle Kmeans( avec k=10) a été utilisé à cet effet.
+Les variables de latitude et longitude ont donc été supprimées du jeu de données et remplacées  par les classes obtenues du modèle Kmeans(voir figure ci-dessous pour les classes). 
 ![regroupement des logements suivants leur latitude et longitudes](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/regroupement_points.png)
 
-# Modelisation
+# Modélisation
 Les données ont été partitionnées en deux. 70% pour les données d'entrainement et 30% pour les données tests. 4 modèles sont considérés dont: le KNN, la régréssion linéaire multiple, les forêts aléatoires et le boosted tree. 
-Le modele KNN depend d'un parametre K a optimise. La validation croisee appliquee sur les donnees d'entrainement  permet de choisir le parametre k=2 comme minimisant l'erreur de prediction. 
+Le modele KNN depend d'un parametre K à optimiser. La validation croisée appliquée sur les donnees d'entrainement  permet de choisir le paramètre k=2 comme minimisant l'erreur de prediction. 
 ![validation croisee knn](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/knn%20validation%20croisee.png).
 
-Nous utilisons egalement la validation croisee sur les autres modeles avant de mesurer leur capacite predictives. Par la suite,il est juste question de les comparer toutes afin de choisir le meilleur modele. La figure ci-dessous, permet de choisir le KNN  comme celui la qui fait un bon compromis entre le biais et la variance. Mais lorsque tester sur le jeu de donnees test, il n'explique 21% d'information contrairement au modele xgboost qui en explique 51%. 
+
+ La validation croisée sur les données d'entrainement est également utilisée sur les autres modèles dans le but de mesurer leur capacite predictive.  La figure ci-dessous, représente la comparaison des érreurs des modèles  obtenues par validation croisée sur le jeu d'entrainement. 
+ De ce graphique, il en ressort que le modèle Knn pourrait avoir la meilleur capacité prédive. Pour confirmer ce résultat, les modèles sont utilisés sur les données tests afin de déterminer leur performance(voir tableau ci-dessous). Il en ressort lque les deux meilleurs modèles sont: les forêts aléatoires et le boosted tree. Le modèle  utilisant les forêts aléatoires bien qu'ayant le meilleur R carré, possède une grande variance et donc n'est pas stable contrairement au modèle xgboost. eu egard de cela, le meilleur modèle qui fait le meilleur compromis entre biais et variance est donc le modèle xgboost.
+  
 ![validation croisee comparaison erreur](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/Erreur%20du%20modeles%20validation%20croisees.png)
+
+
 |         | Regression       | Knn               | Random Forest     | Xgboost           |
 | ------- | ---------------- | ----------------- | ----------------- | ----------------- |
 | RMSE    | 6.97030431630759 | 11.2822424264459  | 40.1011655296402  | 17.0360396232529  |
@@ -43,10 +48,12 @@ Nous utilisons egalement la validation croisee sur les autres modeles avant de m
 
 
 # Prediction 
-Si on croise les valeurs des prix logements predits  obtenus par le modele xgboost avec  les prix reels on obtient la figure suivante. 
+Si on croise les valeurs des prix logements predits  obtenus par les modeles xgboost et random forêts  avec  les prix réels on obtient les figures suivantes. 
 ![comparaison entre le prix predit et le prix actuel avec xgboost](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/cross%20with%20xgboost.png)
 
 ![comparaison entre le prix predit et le prix actuel avec random forest](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/cross%20actual%20predicted%20with%20random%20forest.png)
+
+
 
 
 
