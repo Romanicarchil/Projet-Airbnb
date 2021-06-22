@@ -39,7 +39,7 @@ Nous utilisons egalement la validation croisee sur les autres modeles avant de m
 
 # Prediction 
 Si on croise les valeurs des prix logements predits  obtenus par le modele xgboost avec  les prix reels on obtient la figure suivante. 
-![comparaison entre le prix predit et le prix actuel](https://raw.githubusercontent.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/Predicted%20value%20vs actual%20price.png)
+![comparaison entre le prix predit et le prix actuel](https://raw.githubusercontent.com/Romanicarchil/Projet-Airbnb/main/projectImage/Predicted%20value%20vs actual%20price.png)
 
 
 
