@@ -14,7 +14,7 @@ Le rapport PowerBi (voir fichier [dashboard.pbix](https://github.com/Romanicarch
 
 ![maps des donnees](https://raw.githubusercontent.com/Romanicarchil/Projet-Airbnb/main/projectImage/Screenshot%20from%202021-06-21%2014-57-07.png)
 
-La deuxième page du rapport PowerBI permet une analyse bivariée entre chaque variable explicative et le prix du logement. La page est dotée d'un filtre qui permet de sélectioner la variable en question. La figure suivante est illustration qui montre l'effect du type du logement(logement privé) sur le prix.
+La deuxième page du rapport PowerBI permet une analyse bivariée entre chaque variable explicative et le prix du logement. La page est dotée d'un filtre qui permet de sélectioner la variable en question. La figure suivante est une illustration qui montre l'effect du type du logement(logement privé) sur le prix.
 
 ![analyse bivariee entre le prix et variable chambre_privee](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/analyse%20bivariees.PNG)
 
