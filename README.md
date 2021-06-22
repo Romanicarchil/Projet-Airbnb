@@ -1,7 +1,7 @@
 # Projet Technique: Prédiction du prix des logements sur Airbnb
 Airbnb est une plate forme en ligne pour la location de maisons et d'appartements à court terme. Elle vous permet, par exemple, de louer  votre logement pendant une semaine pendant votre absence. L'un des défis auxquels sont confrontés les hôtes Airbnb est de déterminer le prix de location optimal par nuit.  il n'existe pas de méthodes faciles d'accès pour déterminer le meilleur prix pour louer un espace.  Notre objectif va donc consister à predire le prix des listings de Airbnb dans la région du Québec en nous basant sur l'historique des annonces disponibles.
 
-# Data
+# Données
 Les données  proviennent de [Inside Airbnb](http://insideairbnb.com/get-the-data.html) qui est un site qui scrape les données de Airbnb. Les données ont été scrapées sur une période allant du 11 avril 2021 au 13 avril 2021. La base de données contient des informations sur toutes les annonces Airbnb du Québec qui étaient en ligne sur le site pendant cette période. On compte 2289 annonces dans la base de données et plus de 70 variables. Les variables peuvent être regroupées en plusieurs catégories dont: les données géospatiales(exemple de la latitude et la longitude), les données sur les logements dont le nombre de lits, le nombre douche etc. ; des informations  sur les commentaires des clients, des informations sur les annonceurs et les annonces  etc.
 
 # Nettoyage et exploration des données
