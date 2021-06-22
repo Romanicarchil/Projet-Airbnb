@@ -47,7 +47,7 @@ Le modele KNN depend d'un parametre K à optimiser. La validation croisée appli
 
 
 
-# Prediction 
+# Prédiction 
 Si on croise les valeurs des prix de logements predits  obtenus par les modèles XGBoost et random forêts  avec  les prix réels on obtient les figures suivantes. 
 ![comparaison entre le prix predit et le prix actuel avec xgboost](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/cross%20with%20xgboost.png)
 
