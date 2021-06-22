@@ -139,18 +139,77 @@ group_[[4]]=erreur_rf
 names(group_)=c("knn","regression","xgboost","randomForest")
 boxplot(group_,col="gray",main="comparaison des erreurs des modèles")
 
-# Le meilleur modele est xgboost 
+
+
+
+#--------------------------------------------------------#
+#                        Prediction                      #
+#--------------------------------------------------------#
+
+result=data.frame(matrix(NA,2,4))
+names(result)=c("lm","knn","rf","xgb")
+row.names(result)=c("RMSE","Rsquare")
+ntest=dim(data_test)[1]
+
+# predict test with linear regression 
+
+lm.fit=lm(price ~.,data = data_train)
+lm.pred = predict.lm(lm.fit,data_test[,-m])
+erreur.lm = sum(lm.pred-data_test$price)^2/ntest 
+cross_real_predict_data_lm=data.frame(predicted_price=lm.pred, actual_price=data_test$price)
+model.lm=lm(predicted_price~.,data=cross_real_predict_data_lm)
+resume.lm=summary(model.lm)
+result["Rsquare","lm"]=resume.lm$adj.r.squared
+result["RMSE","lm"]=sqrt(erreur.lm)
+
+
+# predict with knn
+knn.fit=knn.reg( data_train[,-m], data_test[,-m],data_train[,m], 2)
+erreur.knn = sum(knn.fit$pred-data_test$price)^2/ntest 
+cross_real_predict_data_knn=data.frame(predicted_price=knn.fit$pred, actual_price=data_test$price)
+model.knn=lm(predicted_price~.,data=cross_real_predict_data_knn)
+resume.knn=summary(model.knn)
+result["Rsquare","knn"]=resume.knn$adj.r.squared
+result["RMSE","knn"]=sqrt(erreur.knn)
+
+
+
+# predict with random forest
+rf.fit=randomForest(price ~.,data = data_train)
+rf.pred = predict(rf.fit,data_test[,-m])
+erreur.rf = sum(rf.pred-data_test$price)^2/ntest 
+cross_real_predict_data_rf=data.frame(predicted_price=rf.pred, actual_price=data_test$price)
+model.rf=lm(predicted_price~.,data=cross_real_predict_data_rf)
+resume.rf=summary(model.rf)
+result["Rsquare","rf"]=resume.rf$adj.r.squared
+result["RMSE","rf"]=sqrt(erreur.rf)
+
+
+
+
+# predict with xgboost
 xgb.fit <- train(
   price ~., data = data_train, method = "xgbTree",
   trControl = trainControl("cv", number = 10)
 )
-pred_boost=xgb.fit %>% predict(data_test[,-m])
 
-cross_real_predict_data=data.frame(predicted_price=pred_boost, actual_price=data_test$price)
+xgb.pred = predict(xgb.fit,data_test[,-m])
+erreur.xgb = sum(xgb.pred-data_test$price)^2/ntest 
+cross_real_predict_data_xgb=data.frame(predicted_price=xgb.pred, actual_price=data_test$price)
+model.xgb=lm(predicted_price~.,data=cross_real_predict_data_xgb)
+resume.xgb=summary(model.xgb)
+result["Rsquare","xgb"]=resume.xgb$adj.r.squared
+result["RMSE","xgb"]=sqrt(erreur.xgb)
 
-p <- ggplot(cross_real_predict_data, aes(x=predicted_price, y=actual_price))  + geom_point()
-p
 
-model=lm(predicted_price~.,data=cross_real_predict_data)
-summary(model)
+p <- ggplot(cross_real_predict_data_xgb, aes(x=predicted_price, y=actual_price))  + geom_point()
+p+xlab("predicted price with xgboost")
+
+p <- ggplot(cross_real_predict_data_rf, aes(x=predicted_price, y=actual_price))  + geom_point()
+p+xlab("predicted price with random Forest")
+
+write.table(result,"result_prediction.xls",sep="\t",row.names = T)
+
+
+
 
