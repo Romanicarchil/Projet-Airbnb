@@ -4,7 +4,7 @@ Airbnb est une plate forme en ligne pour la location de maisons et d'appartement
 # Data
 Les données  proviennent de [Inside Airbnb](http://insideairbnb.com/get-the-data.html) qui est un site qui scrape les données de Airbnb. Les données ont été scrapées sur une période allant du 11 avril 2021 au 13 avril 2021. La base de données contient des informations sur toutes les annonces Airbnb du Québec qui étaient en ligne sur le site pendant cette période. On compte 2289 annonces dans la base de données et plus de 70 variables. Les variables peuvent être regroupées en plusieurs catégories dont: les données géospatiales(exemple de la latitude et la longitude), les données sur les logements dont le nombre de lits, le nombre douche etc. ; des informations  sur les commentaires des clients, des informations sur les annonceurs et les annonces  etc.
 
-# Data cleaning and exploration
+# Nettoyage et exploration des données
 Certaines  variables  ont été retirées du jeu de données à l'exemple des variables de textes libres comme  la description des annonces, les commentaires des clients et  les informations relatives aux annonceurs. Pour inclure ces données, il aurait fallu faire un traitement du langage naturel(NLP); ce qui aurait augmenté la complexité des modèles à produire par la suite. De plus, les colonnes  qui contiennent une seule catégorie, ou un nombre élévé de valeurs manquantes(plus de 30%)  ont été supprimées. Les variables contenant moins de 30% de valeurs manquantes ont été  quant à eux imputées.
 
 Une section complète  sur le nettage des données  explique comment et pourquoi certaines variables ont été retirées (voir fichier [Cleaning exploration.R dans github](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/Cleaning%20exploration.R)).
