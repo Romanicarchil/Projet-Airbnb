@@ -13,7 +13,8 @@ Une section complète  sur le nettage des données  explique comment et pourquoi
 Le rapport Power Bi (voir fichier dashboard.pbix dans github) permet de realiser une exploration partielle de nos données.  Le rapport de visualisation contient deux pages. La premiere permet de visualiser les annonces selon leur position géographique et suivant le score des logements.  Les données de la page sont dynamique et peuvent être filtré via les variables qui sont: la zone géographique, le type d'appartement, le score  et le prix du logement. On peut rapidement constate qu'une grande partie des annonces Airbnb sont centrées sur cette zone comme la zone voisinant les plaines d'abraham, ce qui correspond à l'énorme attrait pour les touristes, en particulier pendant la periode estivale. 
 ![maps des donnees](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/Screenshot%20from%202021-06-21%2014-57-07.png)
 
-La deuxième page d'une rapport Power BI permet de réaliser un analyse bivariée entre les variables explicatives et le prix de logement. La page est doté d'un filtre qui permet de sélectioner la variable en question.
+La deuxième page d'une rapport Power BI permet de réaliser un analyse bivariée entre les variables explicatives et le prix de logement. La page est doté d'un filtre qui permet de sélectioner la variable en question. La figure suivante est illustration qui montre l'effect d'une logement avec chambre privee sur le prix.
+
 ![analyse bivariee entre le prix et variable chambre_privee](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/analyse%20bivariees.PNG)
 
 
