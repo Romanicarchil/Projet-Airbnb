@@ -19,13 +19,13 @@ La deuxième page du rapport PowerBI permet une analyse bivariée entre chaque v
 ![analyse bivariee entre le prix et variable chambre_privee](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/analyse%20bivariees.PNG)
 
 ## Analyse des corrélations
-L'analyse des corrélations révèle que certaines variables du jeu de données  sont très correllées(corrélation supérieur à 90%). Ces variables ont été retirer du jeu de donnees pour éviter de biaiser les resultats lors de la modélisation. la matrice des correlations a également révélé que les variables les plus corréllées au prix des logements sont: Le nombre de chambres, le type de chambre et le fait que la chambre soit disponible sur un long terme(30 jours). Les figures ci-dessous représentent les correlations entre les varibles explicatives et le prix des logements. En bleu, les corrélations positives et en rouges, les corrélations negatives.
+L'analyse des corrélations révèle que certaines variables du jeu de données  sont très correlées(corrélation supérieur à 90%). Ces variables ont été retiréé du jeu de donnees pour éviter de biaiser les resultats lors de la modélisation. la matrice des corrélations a également révélé que les variables les plus corrélées au prix sont: Le nombre de chambres, le type de chambre et le fait que la chambre soit disponible sur un long terme(30 jours). Les figures ci-dessous représentent les correlations entre les varibles  et le prix. En bleu, les corrélations positives et en rouges, les corrélations negatives.
 ![correlation positive](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/Screenshot%20from%202021-06-21%2021-21-37.png)
 ![correlation negative](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/Screenshot%20from%202021-06-21%2021-22-32.png)
 
 ## Les variables géospatiales
-Les logements ont été regroupés en 10 classes suivant leurs données géospatiales(latitude et longitude). Un modèle Kmeans( avec k=10) a été utilisé à cet effet.
-Les variables de latitude et longitude ont donc été supprimées du jeu de données et remplacées  par les classes obtenues du modèle Kmeans(voir figure ci-dessous pour les classes). 
+Les logements ont été regroupés en 10 classes suivant les données géospatiales(latitude et longitude). Un modèle Kmeans( avec k=10) a été utilisé à cet effet.
+Les variables  latitude et longitude ont donc été supprimées du jeu de données et remplacées  par les classes obtenues du modèle Kmeans(voir figure ci-dessous pour les classes). 
 ![regroupement des logements suivants leur latitude et longitudes](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/regroupement_points.png)
 
 # Modélisation
@@ -35,7 +35,7 @@ Le modele KNN depend d'un parametre K à optimiser. La validation croisée appli
 
 
  La validation croisée sur les données d'entrainement est également utilisée sur les autres modèles dans le but de mesurer leur capacite predictive.  La figure ci-dessous, représente la comparaison des érreurs des modèles  obtenues par validation croisée sur le jeu d'entrainement. 
- De ce graphique, il en ressort que le modèle Knn pourrait avoir la meilleur capacité prédive. Pour confirmer ce résultat, les modèles sont utilisés sur les données tests afin de déterminer leur performance(voir tableau ci-dessous). Il en ressort lque les deux meilleurs modèles sont: les forêts aléatoires et le boosted tree. Le modèle  utilisant les forêts aléatoires bien qu'ayant le meilleur R carré, possède une grande variance et donc n'est pas stable contrairement au modèle xgboost. eu egard de cela, le meilleur modèle qui fait le meilleur compromis entre biais et variance est donc le modèle xgboost.
+ De ce graphique, il en ressort que le modèle Knn pourrait avoir la meilleur capacité prédive. Pour confirmer ce résultat, les modèles sont aussi utilisés sur les données tests afin de déterminer leur performance(voir tableau ci-dessous). Il en ressort que les deux meilleurs modèles sont: les forêts aléatoires et le boosted tree. Le modèle  utilisant les forêts aléatoires bien qu'ayant le meilleur R carré, possède une grande variance et donc n'est pas stable contrairement au modèle XGBoost. Eu egard à cela, le meilleur modèle qui fait le compromis entre biais et variance est donc le modèle xgboost.
   
 ![validation croisee comparaison erreur](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/Erreur%20du%20modeles%20validation%20croisees.png)
 
@@ -48,14 +48,14 @@ Le modele KNN depend d'un parametre K à optimiser. La validation croisée appli
 
 
 # Prediction 
-Si on croise les valeurs des prix logements predits  obtenus par les modeles XGBoost et random forêts  avec  les prix réels on obtient les figures suivantes. 
+Si on croise les valeurs des prix de logements predits  obtenus par les modèles XGBoost et random forêts  avec  les prix réels on obtient les figures suivantes. 
 ![comparaison entre le prix predit et le prix actuel avec xgboost](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/cross%20with%20xgboost.png)
 
 ![comparaison entre le prix predit et le prix actuel avec random forest](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/cross%20actual%20predicted%20with%20random%20forest.png)
 
 # Conclusion
-Si nous devons choisir un modèle pour prédire le prix des logement,  ce serait le modele  XGBoost. Il est assez stable, moins couteux et prédit environ 54% de la variation de prix. Ce qui signifie que nous avons encore 46 % inexpliquée. Un ensemble de variables différentes qui ne sont pas incluses pourraient expliquer le reste de la variance.
-Par exemple, les commodites accessible près du logement peuvent influencer la decision des clients.  Il peut être important d'être à proximité de certaines zones touristiques. Mais aussi, savoir que vous aurez une épicerie ou un supermarché à une  distance de marche peut être un plus. De nombreux locataires apprécient le fait qu'on puisse préparer ces propres repas.
+Si nous devons choisir un modèle pour prédire le prix des logement,  ce serait le modele  XGBoost. Il est assez stable, moins couteux et prédit environ 54% de la variation du prix. Ce qui signifie que nous avons encore 46 %  de variance inexpliquée. Un ensemble de variables  qui ne sont pas incluses dans l'analyse pourraient expliquer le reste de la variance.
+Par exemple, les commodites accessible près du logement peuvent influencer la decision des clients et donc le prix.  Il peut être important d'être à proximité de certaines zones touristiques. Mais aussi, savoir que vous aurez une épicerie ou un supermarché à une  distance de marche peut être un plus. De nombreux locataires apprécient le fait qu'on puisse préparer ces propres repas.
 
 On pourrait aussi realiser une analyse des sentiments sur les commentaires des clients. Puis faire la moyenne des scores obtenues par logement et les ajouter comme variables dans le jeu de données. De la même manière, on pourrait prendre en compte  la description des annonces dans les modèles. 
 
