@@ -1,4 +1,4 @@
-# Projet Technique: Prédiction du prix des listings sur Airbnb
+# Projet Technique: Prédiction du prix des logements sur Airbnb
 Airbnb est une place de marché Internet pour la location de maisons et d'appartements à court terme. Il vous permet, par exemple, de louer  votre logement pendant une semaine pendant votre absence. L'un des défis auxquels sont confrontés les hôtes Airbnb est de déterminer le prix de location optimal par nuit.  il n'existe pas de méthodes faciles d'accès pour déterminer le meilleur prix pour louer un espace.  Notre objectif va donc consister à predire le prix des listings de Airbnb dans la région du Québec en nous basant sur l'historique des listing disponibles.
 
 # Data
@@ -11,7 +11,7 @@ Une section complète  sur le nettage des données  explique comment et pourquoi
 
 # Exploration des données via Power Bi 
 Le rapport Power Bi (voir fichier dashboard.pbix dans github) permet de realiser une exploration partielle de nos données.  Le rapport de visualisation contient deux pages. La premiere permet de visualiser les annonces selon leur position géographique et suivant le score des logements.  Les données de la page sont dynamique et peuvent être filtré via les variables qui sont: la zone géographique, le type d'appartement, le score du logement et le prix.
-
+![maps des donnees](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/Screenshot%20from%202021-06-21%2014-57-07.png)
 
 
 
