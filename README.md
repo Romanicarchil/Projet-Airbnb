@@ -33,10 +33,11 @@ Le modele KNN depend d'un parametre K a optimise. La validation croisee applique
 ![validation croisee knn](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/knn%20validation%20croisee.png).
 
 Nous utilisons egalement la validation croisee sur les autres modeles avant de mesurer leur capacite predictives. Par la suite,il est juste question de les comparer toutes afin de choisir le meilleur modele. La figure ci-dessous, permet de choisir le KNN  comme celui la qui fait un bon compromis entre le biais et la variance. Mais lorsque tester sur le jeu de donnees test, il n'explique 21% d'information contrairement au modele xgboost qui en explique 51%. 
-![validation croisee knn](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/knn%20validation%20croisee.png)
+![validation croisee comparaison erreur](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/Erreur%20du%20modeles%20validation%20croisees.png)
 
 
 # Prediction 
+Si on croise les valeurs des prix logements predits  obtenus par le modele xgboost avec  les prix reels on obtient la figure suivante. 
 ![comparaison entre le prix predit et le prix actuel](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/Predicted%20value%20vs%20actual%20price.png)
 
 
