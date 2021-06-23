@@ -19,7 +19,7 @@ my.valid.knn = function( dat, k, ntest ){
   #Cette fonction retourne l'erreur obtenu avec un modele KNN sur un jeu de donnees test de taille ntest choisi aleatoirement dans dat
   #  
   # input: 
-  #     dat: un jeux de donnees contenant les variables independantes et la variable a predire price
+  #     dat: un jeu de donnees contenant les variables independantes et la variable a predire price
   #     k: parametre du modele knn representant le nombre de plus proche voisin
   #     ntest: nombre des donnees test a choisir aleatoirement de test 
   #------------------------------------------------------------------------------------------------------------------------------------#
@@ -42,7 +42,7 @@ my.valid.lm = function( dat, ntest ){
   #Cette fonction retourne l'erreur obtenue avec un modele de regression lineaire sur un jeu de donnees test de taille ntest choisi aleatoirement dans dat
   #  
   # input: 
-  #     dat: un jeux de donnees contenant les variables independantes et la variable a predire price
+  #     dat: un jeu de donnees contenant les variables independantes et la variable a predire price
   #     ntest: nombre des donnees test a choisir aleatoirement de test 
   #------------------------------------------------------------------------------------------------------------------------------------#
 n = dim(dat)[1]
@@ -63,7 +63,7 @@ my.valid.rf= function( dat, ntest ){
   #Cette fonction retourne l'erreur obtenue avec un modele de forest aleatoire sur un jeu de donnees test de taille ntest choisi aleatoirement dans dat
   #  
   # input: 
-  #     dat: un jeux de donnees contenant les variables independantes et la variable a predire price
+  #     dat: un jeu de donnees contenant les variables independantes et la variable a predire price
   #     ntest: nombre des donnees test a choisir aleatoirement de test 
   #------------------------------------------------------------------------------------------------------------------------------------#
 n = dim(dat)[1]
