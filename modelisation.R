@@ -6,7 +6,7 @@ library(xgboost)
 working_directory="/home/romanic/Documents/promutuel project"
 setwd(working_directory)
 
-#lire les donnees avec les informations detaillees
+#lire les donnees nettoyees
 data=read.csv2( "data_cleaning.csv"  ,sep=",",dec = ".",na.strings = "NA")
 set.seed(15)
 n=dim(data)[1]
