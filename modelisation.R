@@ -39,7 +39,7 @@ my.valid.knn = function( dat, k, ntest ){
 #regression linear multiple
 my.valid.lm = function( dat, ntest ){
   #-----------------------------------------------------------------------------------------------------------------------------------#
-  #Cette fonction retourne l'erreur obtenu avec un modele de regression lineaire sur un jeu de donnees test de taille ntest choisi aleatoirement dans dat
+  #Cette fonction retourne l'erreur obtenue avec un modele de regression lineaire sur un jeu de donnees test de taille ntest choisi aleatoirement dans dat
   #  
   # input: 
   #     dat: un jeux de donnees contenant les variables independantes et la variable a predire price
@@ -60,7 +60,7 @@ return(erreur.lm)
 # random Forest
 my.valid.rf= function( dat, ntest ){
   #-----------------------------------------------------------------------------------------------------------------------------------#
-  #Cette fonction retourne l'erreur obtenu avec un modele de forest aleatoire sur un jeu de donnees test de taille ntest choisi aleatoirement dans dat
+  #Cette fonction retourne l'erreur obtenue avec un modele de forest aleatoire sur un jeu de donnees test de taille ntest choisi aleatoirement dans dat
   #  
   # input: 
   #     dat: un jeux de donnees contenant les variables independantes et la variable a predire price
@@ -81,7 +81,7 @@ return(erreur.rf)
 # boosting
 my.valid.xgb= function( dat, ntest ){
   #-----------------------------------------------------------------------------------------------------------------------------------#
-  #Cette fonction retourne l'erreur obtenu avec un modele du boosting sur un jeu de donnees test de taille ntest choisi aleatoirement dans dat
+  #Cette fonction retourne l'erreur obtenue avec un modele du boosting sur un jeu de donnees test de taille ntest choisi aleatoirement dans dat
   #  
   # input: 
   #     dat: un jeux de donnees contenant les variables independantes et la variable a predire price
