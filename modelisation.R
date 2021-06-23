@@ -84,7 +84,7 @@ my.valid.xgb= function( dat, ntest ){
   #Cette fonction retourne l'erreur obtenue avec un modele du boosting sur un jeu de donnees test de taille ntest choisi aleatoirement dans dat
   #  
   # input: 
-  #     dat: un jeux de donnees contenant les variables independantes et la variable a predire price
+  #     dat: un jeu de donnees contenant les variables independantes et la variable a predire price
   #     ntest: nombre des donnees test a choisir aleatoirement de test 
   #------------------------------------------------------------------------------------------------------------------------------------#
   n = dim(dat)[1]
