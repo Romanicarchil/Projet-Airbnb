@@ -30,12 +30,12 @@ Les variables  latitude et longitude ont donc été supprimées du jeu de donné
 
 # Modélisation
 Les données ont été partitionnées en deux. 70% pour les données d'entrainement et 30% pour les données tests. 4 modèles sont considérés dont: le KNN, la régréssion linéaire multiple, les forêts aléatoires et le boosted tree. 
-Le modele KNN depend d'un parametre K à optimiser. La validation croisée appliquée sur les donnees d'entrainement  permet de choisir le paramètre k=2 comme minimisant l'erreur de prediction. 
+Le modèle KNN depend d'un parametre K à optimiser. La validation croisée appliquée sur les donnees d'entrainement  permet de choisir le paramètre K=2 comme minimisant l'erreur de prediction. 
 ![validation croisee knn](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/knn%20validation%20croisee.png).
 
 
  La validation croisée sur les données d'entrainement est également utilisée sur les autres modèles dans le but de mesurer leur capacite predictive.  La figure ci-dessous, représente la comparaison des érreurs des modèles  obtenues par validation croisée sur le jeu d'entrainement. 
- De ce graphique, il en ressort que le modèle Knn pourrait avoir la meilleur capacité prédive. Pour confirmer ce résultat, les modèles sont aussi utilisés sur les données tests afin de déterminer leur performance(voir tableau ci-dessous). Il en ressort que les deux meilleurs modèles sont: les forêts aléatoires et le boosted tree. Le modèle  utilisant les forêts aléatoires bien qu'ayant le meilleur R carré, possède une grande variance et donc n'est pas stable contrairement au modèle XGBoost. Eu egard à cela, le meilleur modèle qui fait le compromis entre biais et variance est donc le modèle xgboost.
+ De ce graphique, il en ressort que le modèle Knn pourrait avoir la meilleur capacité prédictive. Pour confirmer ce résultat, les modèles sont aussi utilisés sur les données tests afin de déterminer leur performance(voir tableau ci-dessous). Il en ressort que les deux meilleurs modèles sont: les forêts aléatoires et le boosted tree. Le modèle  utilisant les forêts aléatoires bien qu'ayant le meilleur R carré, possède une grande variance et donc n'est pas stable contrairement au modèle XGBoost. Eu egard à cela, le meilleur modèle qui fait le compromis entre biais et variance est donc le modèle xgboost.
   
 ![validation croisee comparaison erreur](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/Erreur%20du%20modeles%20validation%20croisees.png)
 
@@ -54,7 +54,7 @@ Si on croise les valeurs des prix de logements predits  obtenus par les modèles
 ![comparaison entre le prix predit et le prix actuel avec random forest](https://github.com/Romanicarchil/Projet-Airbnb/blob/main/projectImage/cross%20actual%20predicted%20with%20random%20forest.png)
 
 # Conclusion
-Si nous devons choisir un modèle pour prédire le prix des logement,  ce serait le modele  XGBoost. Il est assez stable, moins couteux et prédit environ 54% de la variation du prix. Ce qui signifie que nous avons encore 46 %  de variance inexpliquée. Un ensemble de variables  qui ne sont pas incluses dans l'analyse pourraient expliquer le reste de la variance.
+Si nous devons choisir un modèle pour prédire le prix des logements,  ce serait le modele  XGBoost. Il est assez stable, moins couteux et prédit environ 54% de la variation du prix. Ce qui signifie que nous avons encore 46 %  de variance inexpliquée. Un ensemble de variables  qui ne sont pas incluses dans l'analyse pourraient expliquer le reste de la variance.
 Par exemple, les commodites accessible près du logement peuvent influencer la decision des clients et donc le prix.  Il peut être important d'être à proximité de certaines zones touristiques. Mais aussi, savoir que vous aurez une épicerie ou un supermarché à une  distance de marche peut être un plus. De nombreux locataires apprécient le fait qu'on puisse préparer ces propres repas.
 
 On pourrait aussi realiser une analyse des sentiments sur les commentaires des clients. Puis faire la moyenne des scores obtenues par logement et les ajouter comme variables dans le jeu de données. De la même manière, on pourrait prendre en compte  la description des annonces dans les modèles. 
